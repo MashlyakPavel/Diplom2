@@ -23,7 +23,7 @@ public class UserCreateTest {
     @After
     public void cleanUp() {
         //Очистка тестовых данных
-        response = burgerUser.apiUserDelete();
+        ValidatableResponse response = burgerUser.apiUserDelete();
     }
 
     // Положительный тест

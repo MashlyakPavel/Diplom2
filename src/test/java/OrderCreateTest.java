@@ -26,7 +26,7 @@ public class OrderCreateTest {
     @After
     public void cleanUp() {
         //Очистка тестовых данных
-         response = burgerUser.apiUserDelete();
+        ValidatableResponse response = burgerUser.apiUserDelete();
     }
 
     @Test
