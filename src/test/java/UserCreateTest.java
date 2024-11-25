@@ -13,7 +13,7 @@ import static org.junit.Assert.assertTrue;
 
 public class UserCreateTest {
     private BurgerUser burgerUser;
-    private ValidatableResponse response;
+
 
     @Before
     public void setUp() {

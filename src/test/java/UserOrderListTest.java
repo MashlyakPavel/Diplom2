@@ -12,7 +12,7 @@ import static org.apache.http.HttpStatus.*;
 public class UserOrderListTest {
     private BurgerUser burgerUser;
     private BurgerOrder burgerOrder;
-    private ValidatableResponse response;
+
 
     @Before
     public void setUp() {

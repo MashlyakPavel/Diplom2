@@ -132,11 +132,25 @@ public class BurgerUser {
     }
 
     @Step("User Delete")
-    public ValidatableResponse apiUserDelete(){
+    public ValidatableResponse apiUserDelete() {
         ValidatableResponse response = null;
-        if(isLoginSuccess){
-            response = given().auth().oauth2(accessToken).and().when().delete(BurgerEndpoints.apiUserDelete).then();
+
+        // Проверяем, что пользователь успешно вошел в систему
+        if (isLoginSuccess) {
+            // Выполняем DELETE запрос с использованием OAuth2 токена
+            response = given()
+                    .auth()
+                    .oauth2(accessToken)
+                    .when()
+                    .delete(BurgerEndpoints.apiUserDelete)
+                    .then();
+
+            // Вы можете добавить проверку статуса ответа
+            response.statusCode(200);
+        } else {
+            System.out.println("Вход не удался. Невозможно удалить пользователя.");
         }
+
         return response;
     }
 

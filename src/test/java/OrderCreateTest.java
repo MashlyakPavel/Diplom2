@@ -10,13 +10,13 @@ import org.junit.Test;
 import java.util.Objects;
 
 import static org.apache.http.HttpStatus.*;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+
+
 
 public class OrderCreateTest {
     private BurgerUser burgerUser;
     private BurgerOrder burgerOrder;
-    private ValidatableResponse response;
+
 
     @Before
     public void setUp() {
@@ -26,7 +26,7 @@ public class OrderCreateTest {
     @After
     public void cleanUp() {
         //Очистка тестовых данных
-        response = burgerUser.apiUserDelete();
+         response = burgerUser.apiUserDelete();
     }
 
     @Test
