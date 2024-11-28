@@ -19,11 +19,10 @@ public class UserCreateTest {
     public void setUp() {
         RestAssured.baseURI = BurgerEndpoints.apiBasicURL;
     }
-
+    //Очистка тестовых данных
     @After
     public void cleanUp() {
-        //Очистка тестовых данных
-        ValidatableResponse response = burgerUser.apiUserDelete();
+        burgerUser.apiUserDelete();
     }
 
     // Положительный тест

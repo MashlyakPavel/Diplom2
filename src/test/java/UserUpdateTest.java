@@ -23,7 +23,7 @@ public class UserUpdateTest {
     @After
     public void cleanUp() {
         // Очистка тестовых данных
-        response = burgerUser.apiUserDelete();
+        burgerUser.apiUserDelete();
     }
 
     @Test

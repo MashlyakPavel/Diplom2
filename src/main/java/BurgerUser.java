@@ -95,6 +95,12 @@ public class BurgerUser {
         if(response.extract().statusCode() == SC_OK) {
             setAccessToken(response);
             setRefreshToken(response);
+            ValidatableResponse loginResponse = apiUserLogin(strLogin, strPassword);
+            if (loginResponse.extract().statusCode() == SC_OK) {
+                this.isLoginSuccess = true; // Устанавливаем isLoginSuccess в true после успешного входа
+            } else {
+                this.isLoginSuccess = false; // Устанавливаем isLoginSuccess в false, если вход не удался
+            }
         }
 
         return response;
